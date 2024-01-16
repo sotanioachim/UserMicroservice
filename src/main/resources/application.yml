@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+spring:
+  application:
+    name: user-management
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${DB_IP:localhost}:5432/UserDB
+    username: admin
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+devicemicroservice:
+  host: ${DEVICE_HOST:localhost}
+  port: ${DEVICE_PORT:8000}
